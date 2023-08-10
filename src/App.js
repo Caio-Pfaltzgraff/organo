@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Banner from './components/Banner';
 import Formulario from './components/Formulario';
 import Time from './components/Time';
+import Rodape from './components/Rodape';
 
 function App() {
 
@@ -46,8 +47,7 @@ function App() {
 const [colaboradores, setColaboradores] = useState([]); //array pois virá uma lista
 
 const aoNovoColaboradorAdicionado = (colaborador) => {
-    console.log(colaborador);
-    setColaboradores([...colaboradores, colaborador]); //cria um novo array, espalha os antigos e coloca o novo no final
+  setColaboradores([...colaboradores, colaborador]); //cria um novo array, espalha os antigos e coloca o novo no final
 }
 
   return (
@@ -61,7 +61,7 @@ const aoNovoColaboradorAdicionado = (colaborador) => {
         corSecundaria={time.corSecundaria} 
         colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
       />)}
-      
+      <Rodape/>
     </div>
   );
 }
